@@ -1,0 +1,53 @@
+{
+  "name": "visitorlens-pro",
+  "version": "3.0.0",
+  "description": "A pure JavaScript visitor profiling library. No dependencies. No API key. Script tag, CommonJS, and ES Module support.",
+  "keywords": [
+    "javascript",
+    "browser-detection",
+    "geolocation",
+    "visitor-tracking",
+    "client-profiling",
+    "geoip",
+    "session-management",
+    "no-dependencies",
+    "pure-js",
+    "cross-browser",
+    "ie-support",
+    "umd",
+    "esm"
+  ],
+  "author": "Fabien Conejero <https://github.com/madjeek-web>",
+  "license": "MIT",
+  "homepage": "https://github.com/madjeek-web/visitorlens-pro",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/madjeek-web/visitorlens-pro.git"
+  },
+  "main": "src/main/visitor.js",
+  "module": "src/main/visitor.esm.js",
+  "browser": "dist/visitor.min.js",
+  "files": [
+    "src/main/visitor.js",
+    "src/main/visitor.esm.js",
+    "dist/visitor.min.js",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "jest",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "terser": "^5.46.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/test/**/*.test.js"
+    ]
+  }
+}

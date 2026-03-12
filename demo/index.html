@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisitorLens - Live Demo</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0f1117;
+            color: #e2e8f0;
+            padding: 2rem;
+            line-height: 1.6;
+        }
+
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #fff; }
+        h2 { font-size: 1.1rem; margin: 1.5rem 0 0.75rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.08em; }
+
+        .subtitle { color: #64748b; margin-bottom: 2rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .card {
+            background: #1e2030;
+            border: 1px solid #2d3555;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+        }
+
+        .card-label {
+            font-size: 0.72rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.3rem;
+        }
+
+        .card-value {
+            font-size: 1rem;
+            color: #e2e8f0;
+            font-weight: 500;
+            word-break: break-all;
+        }
+
+        .card-value.pending { color: #475569; font-style: italic; }
+        .card-value.true-val { color: #34d399; }
+        .card-value.false-val { color: #f87171; }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-blue   { background: #1e40af; color: #93c5fd; }
+        .badge-green  { background: #064e3b; color: #6ee7b7; }
+        .badge-yellow { background: #78350f; color: #fcd34d; }
+        .badge-red    { background: #7f1d1d; color: #fca5a5; }
+
+        button {
+            margin-top: 2rem;
+            padding: 0.6rem 1.4rem;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+        button:hover { background: #2563eb; }
+
+        #json-output {
+            margin-top: 1.5rem;
+            background: #0a0c14;
+            border: 1px solid #1e2030;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: monospace;
+            font-size: 0.78rem;
+            color: #7dd3fc;
+            white-space: pre;
+            overflow-x: auto;
+            max-height: 400px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>VisitorLens</h1>
+    <p class="subtitle">Live visitor profile - all data collected by visitor.js</p>
+
+    <h2>Browser</h2>
+    <div class="grid" id="section-browser"></div>
+
+    <h2>Device</h2>
+    <div class="grid" id="section-device"></div>
+
+    <h2>Screen</h2>
+    <div class="grid" id="section-screen"></div>
+
+    <h2>Network</h2>
+    <div class="grid" id="section-network"></div>
+
+    <h2>Location (loading...)</h2>
+    <div class="grid" id="section-geo"></div>
+
+    <h2>Session</h2>
+    <div class="grid" id="section-session"></div>
+
+    <h2>Capabilities</h2>
+    <div class="grid" id="section-caps"></div>
+
+    <h2>Privacy</h2>
+    <div class="grid" id="section-privacy"></div>
+
+    <button onclick="showJSON()">Show Full JSON</button>
+    <pre id="json-output"></pre>
+
+    <script src="../src/main/visitor.js"></script>
+    <script>
+
+        /* Render a single data card into a section */
+        function card( label, value ) {
+            var d   = document.createElement( 'div' );
+            var lbl = document.createElement( 'div' );
+            var val = document.createElement( 'div' );
+
+            d.className   = 'card';
+            lbl.className = 'card-label';
+            val.className = 'card-value';
+
+            lbl.innerText = label;
+
+            if ( value === true  ) { val.innerText = 'Yes'; val.className += ' true-val';  }
+            else if ( value === false ) { val.innerText = 'No'; val.className += ' false-val'; }
+            else if ( value === null || value === 'pending' ) { val.innerText = 'loading...'; val.className += ' pending'; }
+            else { val.innerText = String( value ); }
+
+            d.appendChild( lbl );
+            d.appendChild( val );
+            return d;
+        }
+
+        /* Append a group of fields to a section element */
+        function fill( sectionId, fields ) {
+            var el = document.getElementById( sectionId );
+            fields.forEach( function ( f ) {
+                el.appendChild( card( f[0], f[1] ) );
+            } );
+        }
+
+        /* Render all synchronous data immediately */
+        fill( 'section-browser', [
+            [ 'Browser Name',    visitor.browser_name    ],
+            [ 'Browser Version', visitor.browser_version ],
+            [ 'Engine',          visitor.browser_engine  ],
+            [ 'Operating System',visitor.os              ],
+            [ 'Language',        visitor.language        ],
+            [ 'All Languages',   visitor.languages       ]
+        ] );
+
+        fill( 'section-device', [
+            [ 'Device Type',      visitor.device_type      ],
+            [ 'CPU Cores',        visitor.cpu_cores         ],
+            [ 'Device Memory',    visitor.device_memory_gb ? visitor.device_memory_gb + ' GB' : 'N/A' ],
+            [ 'Pixel Ratio',      visitor.pixel_ratio       ],
+            [ 'Touch Support',    visitor.touch_support     ],
+            [ 'Max Touch Points', visitor.max_touch_points  ]
+        ] );
+
+        fill( 'section-screen', [
+            [ 'Resolution',       visitor.screen_resolution     ],
+            [ 'Viewport',         visitor.viewport_width + 'x' + visitor.viewport_height ],
+            [ 'Color Depth',      visitor.color_depth + ' bit'  ],
+            [ 'Dark Mode',        visitor.prefers_dark          ],
+            [ 'Reduced Motion',   visitor.prefers_reduced_motion],
+            [ 'High Contrast',    visitor.prefers_high_contrast ]
+        ] );
+
+        fill( 'section-network', [
+            [ 'Connection Type',  visitor.connection_type ],
+            [ 'Downlink',         visitor.downlink        ],
+            [ 'Online',           visitor.is_online       ],
+            [ 'Page Load Time',   visitor.page_load_time  ],
+            [ 'DNS Lookup Time',  visitor.dns_lookup_time ],
+            [ 'Referrer',         visitor.referrer || 'Direct' ]
+        ] );
+
+        fill( 'section-session', [
+            [ 'Visit Count',       visitor.count          ],
+            [ 'Returning Visitor', visitor.is_returning   ],
+            [ 'First Visit',       visitor.first_visit_on ],
+            [ 'Current Visit',     visitor.current_visit_on ],
+            [ 'Timezone',          visitor.timezone       ],
+            [ 'Timezone Offset',   visitor.timezone_offset + ' min' ]
+        ] );
+
+        fill( 'section-caps', [
+            [ 'WebGL',            visitor.has_webgl          ],
+            [ 'GPU',              visitor.gpu_renderer       ],
+            [ 'Canvas',           visitor.has_canvas         ],
+            [ 'Service Worker',   visitor.has_service_worker ],
+            [ 'Notifications',    visitor.has_notifications  ],
+            [ 'WebRTC',           visitor.has_webrtc         ],
+            [ 'Geolocation API',  visitor.has_geolocation    ],
+            [ 'Clipboard API',    visitor.has_clipboard_api  ],
+            [ 'Intl API',         visitor.has_intl           ]
+        ] );
+
+        fill( 'section-privacy', [
+            [ 'Do Not Track',          visitor.do_not_track              ],
+            [ 'Cookies Enabled',       visitor.cookies_enabled           ],
+            [ 'localStorage',          visitor.local_storage_available   ],
+            [ 'sessionStorage',        visitor.session_storage_available ],
+            [ 'Ad Blocker',            visitor.ad_blocker_detected       ]
+        ] );
+
+        /* Geo section fills asynchronously when the API responds */
+        visitor.onGeoReady( function () {
+
+            document.querySelector( 'h2 + #section-geo' );
+
+            /* Find the "Location (loading...)" header and update it */
+            var headers = document.querySelectorAll( 'h2' );
+            for ( var i = 0; i < headers.length; i++ ) {
+                if ( headers[i].innerText.indexOf( 'Location' ) !== -1 ) {
+                    headers[i].innerText = 'Location';
+                }
+            }
+
+            fill( 'section-geo', [
+                [ 'IP Address',      visitor.ip           ],
+                [ 'IP Type',         visitor.ip_type      ],
+                [ 'Country',         visitor.country_name ],
+                [ 'Country Code',    visitor.country_code ],
+                [ 'Continent',       visitor.continent    ],
+                [ 'Capital',         visitor.capital      ],
+                [ 'Region',          visitor.region_name  ],
+                [ 'City',            visitor.city         ],
+                [ 'Postal Code',     visitor.postal_code  ],
+                [ 'Latitude',        visitor.latitude     ],
+                [ 'Longitude',       visitor.longitude    ],
+                [ 'ISP',             visitor.isp          ],
+                [ 'ASN',             visitor.asn          ],
+                [ 'Calling Code',    visitor.calling_code ],
+                [ 'Currency',        visitor.getCurrency() ],
+                [ 'Timezone (Geo)',  visitor.geo_timezone ],
+                [ 'UTC Offset',      visitor.geo_timezone_utc ],
+                [ 'DST Active',      visitor.is_dst       ],
+                [ 'Local Time',      visitor.geo_current_time ]
+            ] );
+        } );
+
+        /* Show full JSON dump */
+        function showJSON() {
+            var el = document.getElementById( 'json-output' );
+            if ( el.style.display === 'none' ) {
+                el.innerText = visitor.toJSON();
+                el.style.display = 'block';
+            } else {
+                el.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>
