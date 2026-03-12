@@ -371,7 +371,7 @@ that supports native ES modules (all modern browsers, no IE support).
 
 ## License
 
-MIT License - 12 / 03 / 2026 - Fabien Conejero
+MIT License - 12 / 03 / 2026 - Fabien Conéjéro
 
 Author : [https://github.com/madjeek-web](https://github.com/madjeek-web)
 
