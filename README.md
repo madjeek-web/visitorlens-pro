@@ -1,3 +1,7 @@
+<p align="center">
+<img src="https://github.com/madjeek-web/visitorlens-pro/raw/main/....png" alt="EventFlow logo png image" width="65%" height="65%">
+</p>
+
 # VisitorLens Pro
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
