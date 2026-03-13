@@ -249,7 +249,15 @@ Every data collection tool, even free, even open source, even tiny, engages the 
 
 
 
+VisitorLens Pro is a tool. Like a kitchen knife: used properly, it’s helpful to everyone. Used poorly, it creates problems.
 
+The library itself does not collect anything in a hidden way, does not resell anything, and communicates only with the documented GeoIP services. Everything is transparent, everything is readable in the source code, line by line.
+
+What matters is how you implement it. If you use it with a consent banner and a clear privacy policy, you’re in compliance. That’s exactly what thousands of sites do with Google Analytics, Hotjar, or any other tool on the market.
+
+The difference here is that you know exactly what the code does, because it is fully commented and open source. You don’t have to trust a black box.
+
+Like any audience measurement tool, VisitorLens Pro must be used with a consent banner. This is not a specific requirement for this project—it’s simply the rule that applies to any similar tool on the market. The difference here is that the code is fully open source and commented. You know exactly what’s happening. No black box, no surprises.
 
 
 
