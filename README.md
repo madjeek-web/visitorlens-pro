@@ -620,4 +620,4 @@ MIT License - 12 / 03 / 2026 - Fabien Conéjéro
 
 Author : [https://github.com/madjeek-web](https://github.com/madjeek-web)
 
-Demo page : [https://madjeek-web.github.io](https://madjeek-web.github.io/visitor-lens-pro-demo-page.html)
+Demo page : [https://madjeek-web.github.io/visitor-lens-pro-demo-page.html](https://madjeek-web.github.io/visitor-lens-pro-demo-page.html)
