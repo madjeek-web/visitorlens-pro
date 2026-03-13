@@ -629,3 +629,13 @@ MIT License - 12 / 03 / 2026 - Fabien Conéjéro
 Author : [https://github.com/madjeek-web](https://github.com/madjeek-web)
 
 Demo page : [https://madjeek-web.github.io/visitor-lens-pro-demo-page.html](https://madjeek-web.github.io/visitor-lens-pro-demo-page.html)
+
+##
+
+## ༄☕︎︎︎ Buy Me A Coffee :
+
+<a href="https://donate.stripe.com/3cI6oH1nUgsy8WZdVHgEg00" target="_blank" rel="noopener noreferrer"><img src="https://github.com/madjeek-web/eventflow/raw/main/Buy_Me _A_Coffee.jpg" alt="Buy Me A Coffee image" width="25%" height="25%"></a>
+
+༄☕︎︎︎ [stripe.com](https://donate.stripe.com/3cI6oH1nUgsy8WZdVHgEg00)
+
+. Thank you for your support
