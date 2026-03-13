@@ -76,6 +76,10 @@ var visitor = require( './src/main/visitor.js' );
 console.log( visitor.browser_name );
 ```
 
+<p align="center">
+<img src="https://github.com/madjeek-web/visitorlens-pro/raw/main/visitor_lens_pro_cover_02.png" alt="Visitor Lens cover 2 png image" width="100%" height="100%">
+</p>
+
 ---
 
 ## GeoIP services and rate limits
