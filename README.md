@@ -19,11 +19,15 @@
 A pure JavaScript library that builds a complete profile of anyone who visits your website.
 One script tag. No dependencies. No API key. Works as a plain script, a CommonJS module, or an ES module.
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ## VisitorLens Pro : what it really is, explained simply
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### The image of the physical world
 
@@ -33,13 +37,17 @@ On the internet, without a tool, a website is blind. Someone visits. That's it. 
 
 VisitorLens Pro gives this sight back to the website. Automatically. Silently. From the very first second.
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### In one sentence
 
 It's a small JavaScript file that you paste into any web page. It loads silently and builds a complete portrait of each visitor, available immediately in the site's code, without a server, without an account to create, without a subscription.
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### What it sees on each visitor
 
@@ -67,7 +75,9 @@ It detects if the visitor uses an ad blocker (via three cross-checked techniques
 
 It checks if the browser supports 3D (WebGL), which GPU is used, if push notifications are available, if GPS geolocation is accessible, if web bluetooth works.
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### How a company uses it concretely
 
@@ -95,19 +105,25 @@ The visitor has enabled dark mode and reduced motion on their system. The site a
 
 The visitor's connection is detected as slow (2G or 3G). The site automatically loads lightweight images and does not enable autoplay videos. The experience remains smooth even on a difficult connection.
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### Why it's technically serious
 
 The project exists in three different formats : a classic file for simple sites, a CommonJS module for Node.js and automated tests, and an ES module for React, Vue, Vite, and all modern tools. A compilation script automatically generates a lightweight version of 14.6 KB (70% smaller than the full source code). An international CDN URL via jsDelivr allows using it without downloading anything. 46 automated tests verify that everything works, including simulated network failures.
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### What this project is not
 
 It does not store anything on an external server. It does not sell any data. It does not share anything with advertisers. Everything stays in the visitor's browser. It is the site owner who decides what to do with this information.
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### For whom, in summary
 
@@ -119,7 +135,9 @@ For the entrepreneur or project manager who wants to understand their visitors w
 
 For the teacher looking for a concrete and complete example to teach browser APIs, cookies, asynchronous HTTP requests, and feature detection.
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 
 
@@ -127,13 +145,17 @@ For the teacher looking for a concrete and complete example to teach browser API
 
 ## VisitorLens Pro and the law : what you need to know
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### The legal reality in one sentence
 
 VisitorLens Pro collects personal data within the meaning of the GDPR. The fact that it is a small, free JavaScript file changes nothing. The law applies as soon as a piece of data makes it possible to identify or locate a person, even indirectly.
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### What triggers the GDPR in this project
 
@@ -151,7 +173,9 @@ The `visitorlens` cookie placed in the visitor's browser memorizes the number of
 
 Browser + system + resolution + language + city + time zone + internet service provider : taken separately, these elements seem harmless. Combined, they form a fingerprint that can identify a person in a near-unique way. This is what is known as fingerprinting. The CNIL expressly targeted it in its 2020 recommendations.
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### What the GDPR says concretely
 
@@ -175,7 +199,9 @@ A visitor may request the deletion of their data. For VisitorLens Pro, this mean
 
 The four GeoIP services are data processors within the meaning of the GDPR. The site controller must verify that each one has a DPA (Data Processing Agreement) and complies with the GDPR. Ipapi.co and ipinfo.io offer one. Ipwho.is and freeipapi.com are less documented on this point.
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### Other applicable laws
 
@@ -199,7 +225,9 @@ If the site is accessible from California and exceeds certain activity threshold
 
 For sites with traffic from Brazil, the Lei Geral de Proteção de Dados applies with principles close to those of the GDPR.
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### What protects and what exposes
 
@@ -212,7 +240,9 @@ For sites with traffic from Brazil, the Lei Geral de Proteção de Dados applies
 | Collected data never leaves the browser | Moderate risk |
 | Data is sent to a server without a DPA with the sub-processors | High risk |
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### What should be added to the project to be compliant
 
@@ -239,7 +269,9 @@ A `THIRD_PARTIES.md` file listing the four GeoIP services, their privacy policie
 
 An option to disable the GeoIP request and the cookie, so that the project remains usable for collecting browser data only (which does not trigger the same obligations).
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ### An honest summary
 
@@ -262,7 +294,9 @@ Like any audience measurement tool, VisitorLens Pro must be used with a consent 
 
 
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 
 
@@ -325,7 +359,9 @@ console.log( visitor.browser_name );
 <img src="https://github.com/madjeek-web/visitorlens-pro/raw/main/visitor_lens_pro_cover_02.png" alt="Visitor Lens cover 2 png image" width="100%" height="100%">
 </p>
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ## GeoIP services and rate limits
 
@@ -352,7 +388,9 @@ Consider self-hosting a [MaxMind GeoLite2](https://dev.maxmind.com/geoip/geolite
 database on your server and querying it server-side. The GeoLite2 City database is free,
 updated weekly, and has no per-request limits.
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ## What does it collect ?
 
@@ -620,7 +658,9 @@ The library never crashes on missing APIs.
 The ES Module version (`visitor.esm.js`) requires a browser or bundler
 that supports native ES modules (all modern browsers, no IE support).
 
----
+<p align="center">
+  <img src="https://github.com/madjeek-web/about/raw/main/hr.png" alt="separator" width="300" height="3">
+</p>
 
 ## License
 
